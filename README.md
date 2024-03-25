@@ -1,4 +1,4 @@
-# Solace PubSub+ Software Event Broker Queues & Endpoints Terraform Module
+# Solace PubSub+ Appliance Queues & Endpoints Terraform Module
 
 Terraform module to configure a "guaranteed messaging endpoint" or an "endpoint template" on the [Solace PubSub+ Event Broker](https://solace.com/products/event-broker/). 
 
@@ -28,10 +28,10 @@ Optional module variables are either shared by multiple types, or conditional to
 
 | Resource name |
 |---------------|
-|[solacebroker_msg_vpn_queue](https://registry.terraform.io/providers/SolaceProducts/solacebroker/latest/docs/resources/msg_vpn_queue#optional)|
-|[solacebroker_msg_vpn_topic_endpoint](https://registry.terraform.io/providers/SolaceProducts/solacebroker/latest/docs/resources/msg_vpn_topic_endpoint#optional)|
-|[solacebroker_msg_vpn_queue_template](https://registry.terraform.io/providers/SolaceProducts/solacebroker/latest/docs/resources/msg_vpn_queue_template#optional)|
-|[solacebroker_msg_vpn_topic_endpoint_template](https://registry.terraform.io/providers/SolaceProducts/solacebroker/latest/docs/resources/msg_vpn_topic_endpoint_template#optional)|
+|[solacebroker_msg_vpn_queue](https://registry.terraform.io/providers/solaceproducts/solacebrokerappliance/latest/docs/resources/msg_vpn_queue#optional)|
+|[solacebroker_msg_vpn_topic_endpoint](https://registry.terraform.io/providers/solaceproducts/solacebrokerappliance/latest/docs/resources/msg_vpn_topic_endpoint#optional)|
+|[solacebroker_msg_vpn_queue_template](https://registry.terraform.io/providers/solaceproducts/solacebrokerappliance/latest/docs/resources/msg_vpn_queue_template#optional)|
+|[solacebroker_msg_vpn_topic_endpoint_template](https://registry.terraform.io/providers/solaceproducts/solacebrokerappliance/latest/docs/resources/msg_vpn_topic_endpoint_template#optional)|
 
 Most optional variables' default value is `null`, meaning that if not provided then the resource default value will be provisioned on the broker.
 
@@ -45,7 +45,7 @@ Most optional variables' default value is `null`, meaning that if not provided t
 
 | Name | Version |
 |------|---------|
-| <a name="provider_solacebroker"></a> [solacebroker](https://registry.terraform.io/providers/SolaceProducts/solacebroker/latest) | ~> 0.9 |
+| <a name="provider_solacebroker"></a> [solacebroker](https://registry.terraform.io/providers/solaceproducts/solacebrokerappliance/latest) | ~> 0.9 |
 
 ## Resources
 
