@@ -1,8 +1,8 @@
 provider "solacebroker" {
-  username = "admin"
-  password = "admin"
-  url      = "http://localhost:8080"
-  skip_api_check  = true
+  username       = "admin"
+  password       = "admin"
+  url            = "http://localhost:8080"
+  skip_api_check = true
 }
 
 module "messaging_endpoint_1" {
