@@ -49,10 +49,10 @@ jobs:
         run: |
           if [ "${{ github.event.inputs.public_release }}" == "false" ] ; then
             echo Internal release
-            MODULE_REF="app.terraform.io/SolaceDev/queue-endpoint/solacebroker"
+            MODULE_REF="app.terraform.io/SolaceDev/queue-endpoint/solacebrokerappliance"
           else
             echo Public release
-            MODULE_REF="SolaceProducts/queue-endpoint/solacebroker"
+            MODULE_REF="SolaceProducts/queue-endpoint/solacebrokerappliance"
           fi
           ci/scripts/test-module.sh ci/module-test/ $MODULE_REF "${{ github.event.inputs.release_version }}"
 
