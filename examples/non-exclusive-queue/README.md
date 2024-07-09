@@ -1,6 +1,6 @@
 # Non-exclusive Queue Example
 
-Configuration in this directory creates a [non-exclusive queue](https://docs.solace.com/Get-Started/message-exchange-patterns.htm#Point-to) on the PubSub+ event broker leveraging the Queues & Endpoints Terraform module.
+Configuration in this directory creates a [non-exclusive queue](https://docs.solace.com/Get-Started/message-exchange-patterns.htm#Point-to) on the PubSub+ appliance leveraging the Queues & Endpoints Terraform module.
 
 ## Module Configuration in the Example
 
@@ -29,7 +29,7 @@ This example will create the following resources:
 
 ## Running the Example
 
-### Access to a PubSub+ Event Broker
+### Access to a PubSub+ Appliance
 
 If you don't already have access to a broker, see the [Developers page](https://www.solace.dev/) for options to get started.
 

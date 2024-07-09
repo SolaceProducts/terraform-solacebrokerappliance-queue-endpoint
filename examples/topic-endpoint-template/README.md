@@ -1,6 +1,6 @@
 # Topic Endpoint Template Example
 
-Configuration in this directory creates a [topic endpoint template](https://docs.solace.com/Messaging/Guaranteed-Msg/Configuring-Endpoint-Templates.htm) on the PubSub+ event broker leveraging the Queues & Endpoints Terraform module.
+Configuration in this directory creates a [topic endpoint template](https://docs.solace.com/Messaging/Guaranteed-Msg/Configuring-Endpoint-Templates.htm) on the PubSub+ appliance leveraging the Queues & Endpoints Terraform module.
 
 Important: The topic subscription that a topic endpoint will spool messages for is not specified when a topic endpoint template is provisioned. For more information, see the [PubSub+ documentation](https://docs.solace.com/Messaging/Guaranteed-Msg/Configuring-DTEs.htm).
 
@@ -31,7 +31,7 @@ This example will create the following resources:
 
 ## Running the Example
 
-### Access to a PubSub+ Event Broker
+### Access to a PubSub+ Appliance
 
 If you don't already have access to a broker, see the [Developers page](https://www.solace.dev/) for options to get started.
 

@@ -1,6 +1,6 @@
-# Solace PubSub+ Software Event Broker Queues & Endpoints Terraform Module
+# Solace PubSub+ Appliance Queues & Endpoints Terraform Module
 
-This Terraform module configures a "guaranteed messaging endpoint" or an "endpoint template" on the [Solace PubSub+ Event Broker](https://solace.com/products/event-broker/). 
+This Terraform module configures a "guaranteed messaging endpoint" or an "endpoint template" on the [Solace PubSub+ Appliance](https://solace.com/products/event-broker/). 
 
 This module supports the configuration of one of the following:
 
