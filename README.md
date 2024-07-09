@@ -45,7 +45,7 @@ Most optional variables' default value is `null`, meaning that if not provided t
 
 | Name | Version |
 |------|---------|
-| <a name="provider_solacebroker"></a> [solacebroker](https://registry.terraform.io/providers/solaceproducts/solacebrokerappliance/latest) | ~> 0.9 |
+| <a name="provider_solacebroker"></a> [solacebroker](https://registry.terraform.io/providers/solaceproducts/solacebrokerappliance/latest) | >= 1.0 |
 
 ## Resources
 
