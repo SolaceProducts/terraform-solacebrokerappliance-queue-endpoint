@@ -1,8 +1,8 @@
 # Solace PubSub+ Appliance Queues & Endpoints Terraform Module
 
-Terraform module to configure a "guaranteed messaging endpoint" or an "endpoint template" on the [Solace PubSub+ Event Broker](https://solace.com/products/event-broker/). 
+This Terraform module configures a "guaranteed messaging endpoint" or an "endpoint template" on the [Solace PubSub+ Appliance](https://solace.com/products/event-broker/). 
 
-This module supports the configuration of one of the followings:
+This module supports the configuration of one of the following:
 
 - a "_queue_" or a "_topic endpoint_": applications that make use of [Guaranteed Messaging](https://docs.solace.com/Messaging/Guaranteed-Msg/Guaranteed-Messages.htm), need [endpoints](https://docs.solace.com/Messaging/Guaranteed-Msg/Endpoints.htm) configured on the event broker to persist messages. A queue may also have a list of [topic subscriptions](https://docs.solace.com/API/API-Developer-Guide/Adding-Topic-Subscriptio.htm).
 
@@ -10,30 +10,30 @@ This module supports the configuration of one of the followings:
 
 The module also supports exposing a created queue or topic endpoint via JNDI for JMS applications.
 
-Full details are provided in the [Examples](#examples).
+Use case details are provided in the [Examples](#examples) section.
 
 ## Module input variables
 
 ### Required
 
-* `msg_vpn_name` - Endpoints and endpoint templates are specific to a Message VPN on the broker
+* `msg_vpn_name` - Endpoints and endpoint templates are specific to a Message VPN on the broker.
 * `endpoint_type` - The type of the endpoint or template to be created. Only one type is allowed at a time.
-* `endpoint_name` - The name of the endpoint or template to be created
-* `permission` - Queues or topic endpoints must have proper `owner` or `permission` for non-owners configured to enable clients to connect and consume messages. The user shall consider the security implications when choosing a value. For additional details, refer to the [PubSub+ documentation](https://docs.solace.com/Messaging/Guaranteed-Msg/Configuring-Queues.htm#Configuring_Permissions_for_Non-Owner_Clients_..57)
+* `endpoint_name` - The name of the endpoint or template to be created.
+* `permission` - Queues or topic endpoints must have a valid `owner` or `permission` for non-owners configured to enable clients to connect and consume messages. Consider the security implications when choosing a value. For more information, see the [PubSub+ documentation](https://docs.solace.com/Messaging/Guaranteed-Msg/Configuring-Queues.htm#Configuring_Permissions_for_Non-Owner_Clients_..57).
 
 
 ### Optional
 
-Optional module variables are either shared by multiple types, or conditional to the type where incompatible variables will be ignored. For example, the `permission` variable is shared by all endpoint and template types but `queue_name_filter` is specific to the `queue_template` type and ignored for other types. The recommended approach to determine variable name mappings is to look up the endpoint or template resource's documentation for matching attribute names:
+Optional module variables are either shared by multiple types, or conditional to the type where incompatible variables will be ignored. For example, the `permission` variable is shared by all endpoint and template types but `queue_name_filter` is specific to the `queue_template` type and ignored for other types. To determine the variable name mappings, we recommend that you look for matching attribute names in the documentation for the endpoint or template resource:
 
 | Resource name |
 |---------------|
-|[solacebroker_msg_vpn_queue](https://registry.terraform.io/providers/solaceproducts/solacebrokerappliance/latest/docs/resources/msg_vpn_queue#optional)|
-|[solacebroker_msg_vpn_topic_endpoint](https://registry.terraform.io/providers/solaceproducts/solacebrokerappliance/latest/docs/resources/msg_vpn_topic_endpoint#optional)|
-|[solacebroker_msg_vpn_queue_template](https://registry.terraform.io/providers/solaceproducts/solacebrokerappliance/latest/docs/resources/msg_vpn_queue_template#optional)|
-|[solacebroker_msg_vpn_topic_endpoint_template](https://registry.terraform.io/providers/solaceproducts/solacebrokerappliance/latest/docs/resources/msg_vpn_topic_endpoint_template#optional)|
+|[solacebroker_msg_vpn_queue](https://registry.terraform.io/providers/SolaceProducts/solacebrokerappliance/latest/docs/resources/msg_vpn_queue#optional)|
+|[solacebroker_msg_vpn_topic_endpoint](https://registry.terraform.io/providers/SolaceProducts/solacebrokerappliance/latest/docs/resources/msg_vpn_topic_endpoint#optional)|
+|[solacebroker_msg_vpn_queue_template](https://registry.terraform.io/providers/SolaceProducts/solacebrokerappliance/latest/docs/resources/msg_vpn_queue_template#optional)|
+|[solacebroker_msg_vpn_topic_endpoint_template](https://registry.terraform.io/providers/SolaceProducts/solacebrokerappliance/latest/docs/resources/msg_vpn_topic_endpoint_template#optional)|
 
-Most optional variables' default value is `null`, meaning that if not provided then the resource default value will be provisioned on the broker.
+The default value for most of the optional variables is `null`, meaning that if you don’t provide a value then the default value of the resource is provisioned on the event broker.
 
 -> The module defaults for `ingress_enabled` and `egress_enabled` optional variables are `true`, which differ from the resource attribute defaults.
 
@@ -45,11 +45,11 @@ Most optional variables' default value is `null`, meaning that if not provided t
 
 | Name | Version |
 |------|---------|
-| <a name="provider_solacebroker"></a> [solacebroker](https://registry.terraform.io/providers/solaceproducts/solacebrokerappliance/latest) | ~> 0.9 |
+| <a name="provider_solacebrokerappliance"></a> [solacebrokerappliance](https://registry.terraform.io/providers/SolaceProducts/solacebrokerappliance/latest) | >= 1.0 |
 
 ## Resources
 
-The following table shows the resources created for each `endpoint-type` value. "X" denotes a resource always created, "O" is a resource that may be created optionally  
+The following table shows the resources created for each `endpoint-type` value. "X" denotes a resource that is always created, "O" denotes a resource that you have the option to create.  
 
 | Name | queue | topic_endpoint | queue_template | topic_endpoint_template |
 |------|------|------|------|------|
@@ -63,7 +63,7 @@ The following table shows the resources created for each `endpoint-type` value. 
 
 ## Examples
 
-Refer to the following configuration examples:
+The following examples demonstrate several specific use cases for this module:
 
 - Queue
     - [Exclusive queue](examples/exclusive-queue)

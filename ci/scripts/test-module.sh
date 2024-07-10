@@ -9,6 +9,7 @@ cat main.tf
 terraform init
 terraform validate
 # Create
+export SOLACEBROKER_SKIP_API_CHECK=true
 terraform plan
 terraform apply -auto-approve
 terraform plan | grep "No changes"
