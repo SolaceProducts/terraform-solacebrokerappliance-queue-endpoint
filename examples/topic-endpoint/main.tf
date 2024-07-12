@@ -15,7 +15,7 @@
 provider "solacebroker" {
   username = "admin"
   password = "admin"
-  url      = "http://localhost:8080"
+  url      = "http://localhost:8080" # adjust to your appliance management host and SEMP port
 }
 
 module "topic_endpoint" {
